@@ -116,12 +116,17 @@ WSGI_APPLICATION = 'django_src.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('DJANGO_DB_NAME', 'project_db'),
-        'USER': os.environ.get('DJANGO_DB_USERNAME', 'project'),
-        'PASSWORD': os.environ.get('DJANGO_DB_PASSWORD', 'project'),
-        'HOST': os.environ.get('DJANGO_DB_HOST', 'localhost'),
-        'PORT': os.environ.get('DJANGO_DB_PORT', '3306'),
+        'NAME': 'demo' ,
+        'USER': 'admin',
+        'PASSWORD': 'qwerty1!',
+        'HOST': 'csrd.cksngv0eixsu.ap-northeast-2.rds.amazonaws.com',
+        'PORT': '3306',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+}
+
     }
+}
 
     # 'default': {
     #     'ENGINE': 'django.db.backends.mysql',
@@ -145,7 +150,6 @@ DATABASES = {
     #     'PORT': '27017',  # 데이터베이스 포트(보통은 27017)
     # }
 
-}
 
 # DATABASES = {
 #     'default': {
