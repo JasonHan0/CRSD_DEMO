@@ -1690,6 +1690,28 @@ div.formtag {
     background-color: #f2f2f2;
     padding: 40px;
 }
+
+.box {
+  height: 50px;
+  background-color: rgb(118, 246, 162);
+  line-height: 50px;
+  padding: 5px;
+  margin: 15px;
+  font-weight: bolder;
+}
+
+.audio {
+  filter: sepia(20%) saturate(70%) grayscale(1) contrast(99%) invert(12%);
+  width: 200px;
+  height: 25px;
+}
+
+.js-audioNextBtn,
+button {
+  cursor: pointer;
+  font-size: 30px;
+}
+
 /* ====== The End ====== */
 
 /*# sourceMappingURL=style.css.map */

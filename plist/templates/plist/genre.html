@@ -359,7 +359,7 @@
                                                                 {% for play in play_list %}
                                                                 <li><a href="{% url 'add_song' play_pk=play.pk song_pk=song.pk path_pk=4 %}">{{ play.play_title}}</a></li>
                                                                 {% endfor %}
-                                                             </ul>
+                                                            </ul>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -478,7 +478,7 @@
             $("#else").css("color","#c2c0c0")
             c7=true;
         }
-      });
+    });
     });
         $(document).ready(function(){
             c8=true;
@@ -504,7 +504,8 @@
             $("#all").css("color","black")
             c8=true;
         }
-      });
     });
+    });
+    
     </script>
 {% endblock %}

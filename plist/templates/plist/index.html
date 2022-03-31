@@ -44,14 +44,14 @@
     </section>
     <!-- ##### Hero Area End ##### -->
 
-    <!-- ##### Latest Albums Area Start ##### -->
+    <!-- ##### My Playlist Area Start ##### -->
     <section class="latest-albums-area section-padding-100">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="section-heading style-2">
                         <p>See what’s new</p>
-                        <h2>Latest Songs(신규 발매곡 같은거는 발매일을 크롤링 안해서, 유튜브 조회수 높은 음악 영상을 넣을지 고려)</h2>
+                        <h2>Latest Songs(신규 발매곡은 발매일을 크롤링 안해서, 유튜브 조회수 높은 음악 영상을 넣을지 고려)</h2>
                     </div>
                 </div>
             </div>
@@ -62,7 +62,7 @@
                     </div>
                 </div>
             </div>
-
+            <h2>내 플레이리스트</h2>
             <div class="row">
                 <div class="col-12">
                     <div class="albums-slideshow owl-carousel">
@@ -76,6 +76,7 @@
                                 <p>와르르</p>
                             </div>
                         </div>
+                        
                         
                         {% for song in my_song_list %}
                         <div class="single-album">
@@ -102,16 +103,194 @@
             </div>
         </div>
     </section>
-    <!-- ##### Latest Albums Area End ##### -->
+    <!-- ##### My Playlist Albums Area End ##### -->
+    <!-- ##### Recommend Song Area Start ##### -->
+    <section class="latest-albums-area section-padding-100">
+        <div class="container">
+            <h2>맞춤 플레이리스트</h2>
+            <div class="row">
+                <div class="col-12">
+                    <div class="albums-slideshow owl-carousel">
+                        
+                        <div class="single-album">
+                            <img src={% static "plist/img/bg-img/album1.jpg"%} alt="">
+                            <div class="album-info">
+                                <a href="#">
+                                    <h5>Colde</h5>
+                                </a>
+                                <p>와르르</p>
+                            </div>
+                        </div>
+                        
+                        
+                        {% for song in my_song_list %}
+                        <div class="single-album">
+                            <a href="{% url 'song_detail' pk=song.pk%}">
 
+                                {% if song.song_thumbnail == 'default' %}
+                                <img src="/static/plist/img/artist/default.png" alt="">
+                                {% endif %}
 
-    <!-- ##### Miscellaneous Area Start ##### -->
+                                <img src="/static/plist/img/artist/{{ song.song_thumbnail }}.jpg" alt="">
+                            </a>
+
+                            <div class="album-info">
+                                <a href="{% url 'song_detail' pk=song.pk%}">
+                                    <h5>{{song.song_title}}</h5>
+                                </a>
+                                <p>&nbsp;&nbsp;{{ song.song_artist }}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Recommend Song Area End ##### -->
+    <!-- ##### Genre Song Area Start ##### -->
+    <section class="latest-albums-area section-padding-100">
+        <div class="container">
+            <h2>장르별 플레이리스트</h2>
+            <div class="row">
+                <div class="col-12">
+                    <div class="albums-slideshow owl-carousel">
+                        
+                        <div class="single-album">
+                            <img src={% static "plist/img/bg-img/album2.jpg"%} alt="">
+                            <div class="album-info">
+                                <a href="#">
+                                    <h5>Colde</h5>
+                                </a>
+                                <p>와르르</p>
+                            </div>
+                        </div>
+                        
+                        
+                        {% for song in my_song_list %}
+                        <div class="single-album">
+                            <a href="{% url 'song_detail' pk=song.pk%}">
+
+                                {% if song.song_thumbnail == 'default' %}
+                                <img src="/static/plist/img/artist/default.png" alt="">
+                                {% endif %}
+
+                                <img src="/static/plist/img/artist/{{ song.song_thumbnail }}.jpg" alt="">
+                            </a>
+
+                            <div class="album-info">
+                                <a href="{% url 'song_detail' pk=song.pk%}">
+                                    <h5>{{song.song_title}}</h5>
+                                </a>
+                                <p>&nbsp;&nbsp;{{ song.song_artist }}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Genre Song Area End ##### -->
+    <!-- ##### Mood/Case Song Area Start #####  -->
+    <section class="latest-albums-area section-padding-100">
+        <div class="container">
+            <h2>분위기/상황별 플레이리스트</h2>
+            <div class="row">
+                <div class="col-12">
+                    <div class="albums-slideshow owl-carousel">
+                        
+                        <div class="single-album">
+                            <img src={% static "plist/img/bg-img/a1.jpg"%} alt="">
+                            <div class="album-info">
+                                <a href="#">
+                                    <h5>Colde</h5>
+                                </a>
+                                <p>와르르</p>
+                            </div>
+                        </div>
+                        
+                        
+                        {% for song in my_song_list %}
+                        <div class="single-album">
+                            <a href="{% url 'song_detail' pk=song.pk%}">
+
+                                {% if song.song_thumbnail == 'default' %}
+                                <img src="/static/plist/img/artist/default.png" alt="">
+                                {% endif %}
+
+                                <img src="/static/plist/img/artist/{{ song.song_thumbnail }}.jpg" alt="">
+                            </a>
+
+                            <div class="album-info">
+                                <a href="{% url 'song_detail' pk=song.pk%}">
+                                    <h5>{{song.song_title}}</h5>
+                                </a>
+                                <p>&nbsp;&nbsp;{{ song.song_artist }}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Mood/Case Song Area END #####  -->
+    <!-- ##### Most Listened Music Area Start #####  -->
+    <section class="latest-albums-area section-padding-100">
+        <div class="container">
+            <h2>자주 듣는 음악</h2>
+            <div class="row">
+                <div class="col-12">
+                    <div class="albums-slideshow owl-carousel">
+                        
+                        <div class="single-album">
+                            <img src={% static "plist/img/bg-img/album4.jpg"%} alt="">
+                            <div class="album-info">
+                                <a href="#">
+                                    <h5>Colde</h5>
+                                </a>
+                                <p>와르르</p>
+                            </div>
+                        </div>
+                        
+                        
+                        {% for song in my_song_list %}
+                        <div class="single-album">
+                            <a href="{% url 'song_detail' pk=song.pk%}">
+
+                                {% if song.song_thumbnail == 'default' %}
+                                <img src="/static/plist/img/artist/default.png" alt="">
+                                {% endif %}
+
+                                <img src="/static/plist/img/artist/{{ song.song_thumbnail }}.jpg" alt="">
+                            </a>
+
+                            <div class="album-info">
+                                <a href="{% url 'song_detail' pk=song.pk%}">
+                                    <h5>{{song.song_title}}</h5>
+                                </a>
+                                <p>&nbsp;&nbsp;{{ song.song_artist }}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Most Listened Music Area END #####  -->
+        <!-- ##### Top 100 Music Area Start #####  -->
     <section class="miscellaneous-area section-padding-100-0">
         <div class="container">
             <div class="col-12">
                 <div class="section-heading style-2">
-                    <p>최근에 추가한 플레이 리스트</p>
-                    <h2>Recently added playlist</h2>
+                    <p>Top 100 </p>
+                    <h2>음악 인기 순</h2>
                 </div>
             </div>
             <div class="row">
@@ -124,9 +303,7 @@
                             <p>{{ event.my_playlist.author }} 님의 </p>
                             <h2><a href="{% url 'play_detail' pk=event.my_playlist.pk %}">{{event.my_playlist.play_title }}</a></h2>
                         </div>
-
                         {% for song in event.song_list %}
-                        
                             <!-- Single Top Item -->
                             <div class="single-new-item d-flex align-items-center justify-content-between wow fadeInUp" data-wow-delay="100ms">
                                 
@@ -147,12 +324,36 @@
                         {% endfor %}
                     </div>
                 </div>
-            
+    
                 {% endfor %}
-                
+            <div class="box">1.기본 오디오 태그 테스트 / 권진아 - 끝</div>
+            <audio>
+                <source  src={% static "plist/2022-03-21_/끝-권진아_30.wav"%} type="audio/wav" />
+            </audio>
+            <div class="box">2. 다른 css 적용가능한지 테스트 / 권진아 - 끝</div>
+            <audio id="player" src={% static "plist/2022-03-21_/끝-권진아_30.wav"%} type="audio/wav" ></audio>
+    
+            <div class="js-onOffWrap">
+            <button onclick="document.getElementById('player').play()">Play</button>
+            <button onclick="document.getElementById('player').pause()">Pause</button>
+            <button onclick="document.getElementById('player').volume += 0.1">Vol +</button>
+            <button onclick="document.getElementById('player').volume -= 0.1">Vol -</button>
             </div>
+            </div>
+
+
+            <audio id="audioContainer">
+                    <source id="audioSource" src={% static "plist/2022-03-21_/"%} type="audio/wav">
+                    Your browser does not support the audio format.
+                </audio>
+                <div class="js-onOffWrap">
+                    <button class="js-playBtn">♬ Play Music</button>
+                    <button class="js-stopBtn">♬ Stop Music</button>
+                </div>
+                <div class="js-audioNextBtn">⏯</div>
+            <script src="script.js"></script>
+
         </div>
     </section>
-
+    <!-- ##### Top 100 Music Area END #####  -->
 {% endblock %}
-

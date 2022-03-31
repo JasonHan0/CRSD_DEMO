@@ -116,17 +116,39 @@ WSGI_APPLICATION = 'django_src.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'demo' ,
+        'NAME': 'before-pp' ,
         'USER': 'admin',
         'PASSWORD': 'qwerty1!',
         'HOST': 'csrd.cksngv0eixsu.ap-northeast-2.rds.amazonaws.com',
         'PORT': '3306',
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+                    }
+                },
+    # 'extra1': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'bf-pp',
+    #     'USER': 'admin',
+    #     'PASSWORD': 'qwerty1!',
+    #     'HOST': 'csrd.cksngv0eixsu.ap-northeast-2.rds.amazonaws.com',
+    #     'PORT': '3306',
+    #     'OPTIONS': {
+    #         'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+    #                 }
+    #             },
+    # 'extra2': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'demo',
+    #     'USER': 'admin',
+    #     'PASSWORD': 'qwerty1!',
+    #     'HOST': 'csrd.cksngv0eixsu.ap-northeast-2.rds.amazonaws.com',
+    #     'PORT': '3306',
+    #     'OPTIONS': {
+    #         'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+    #     }
 }
 
-    }
-}
+# DATABASE_ROUTERS = ['two_schemas.router.DBRouter']
 
     # 'default': {
     #     'ENGINE': 'django.db.backends.mysql',
